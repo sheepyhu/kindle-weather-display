@@ -1,0 +1,4 @@
+*/7 * * * *    root	/var/www/weather/weather-script.sh >/dev/null 2>&1
+*/12 * * * *   root	wget -O /var/www/weather/weather.json "http://api.openweathermap.org/data/2.5/weather?lat=47.4282&lon=19.0042&units=metric&appid=bdd7966256ac069800ca6734d2777d55" >/dev/null 2>&1
+10 * * * *     root	wget -O /var/www/weather/daily.json "http://api.openweathermap.org/data/2.5/forecast/daily?lat=47.4282&lon=19.0042&cnt=4&units=metric&appid=bdd7966256ac069800ca6734d2777d55" >/dev/null 2>&1
+
