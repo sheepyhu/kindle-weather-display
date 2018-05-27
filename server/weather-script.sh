@@ -1,8 +1,9 @@
 #!/bin/sh
 
+#/var/www/weather is my webroot
 cd "$(dirname "$0")"
 
-python2 weather-script.py
-rsvg-convert --background-color=white -o weather-script-output.png weather-script-output.svg
-pngcrush -c 0 -ow weather-script-output.png
-cp -f weather-script-output.png /path/to/web/server/directory/weather-script-output.png
+php decode.php
+convert weather-script-output.svg weather-script-output-new.png
+pngcrush -c 0 -nofilecheck weather-script-output-new.png weather-script-output.png
+
